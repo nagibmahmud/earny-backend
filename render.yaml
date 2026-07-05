@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: earny-api
+    runtime: node
+    repo: https://github.com/yourusername/earny-backend
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGIN
+        value: http://earny.free.nf,https://earny.free.nf
+      - key: GMAIL_EMAIL
+        sync: false
+      - key: GMAIL_APP_PASSWORD
+        sync: false
